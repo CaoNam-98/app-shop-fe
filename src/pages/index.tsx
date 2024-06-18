@@ -1,15 +1,16 @@
 'use client'
 import Head from 'next/head'
-import { Typography, useTheme } from '@mui/material'
+import { Box, Typography, useTheme } from '@mui/material'
 import { useSettings } from 'src/hooks/useSettings'
+import CustomTextField from 'src/components/text-field'
 
 export default function Home() {
   const theme = useTheme()
-  console.log("theme: ", theme)
+  console.log('theme 1: ', theme)
 
   // UseSetting là các hook tạo ra từ context
-  const { settings } = useSettings();
-  console.log('theme', {theme, settings});
+  const { settings } = useSettings()
+  console.log('theme 2', { theme, settings })
 
   return (
     <>
@@ -19,7 +20,10 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Typography>Hello world updated</Typography>
+      {/* Box trong material UI cũng giống như thẻ <div> */}
+      <Box sx={{ margin: 6, width: '200px' }}>
+        <CustomTextField id='outlined-multiline-flexible' label='Multiline' />
+      </Box>
     </>
   )
 }
