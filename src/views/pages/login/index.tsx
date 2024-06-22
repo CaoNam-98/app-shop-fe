@@ -76,7 +76,7 @@ const LoginPage: NextPage<TProps> = () => {
               )}
               name='email'
             />
-            {errors.email && <Typography>{errors?.email?.message}</Typography>}
+            {errors.email && <Typography>This is error</Typography>}
           </Box>
 
           <Box>
@@ -99,7 +99,7 @@ const LoginPage: NextPage<TProps> = () => {
               )}
               name='password'
             />
-            {errors.password && <Typography>{errors?.password}</Typography>}
+            {errors.password && <Typography>This is error</Typography>}
           </Box>
           <FormControlLabel control={<Checkbox value='remember' color='primary' />} label='Remember me' />
           <Button type='submit' fullWidth variant='contained' sx={{ mt: 3, mb: 2 }}>
